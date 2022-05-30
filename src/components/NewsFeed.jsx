@@ -1,6 +1,7 @@
 const NewsFeed = ({ news, setNews }) => {
   const handleDelete = (id) => {
-    setNews(news.filter((el) => el.id !== id));
+    let newList = news.filter((item) => item.objectID !== id);
+    setNews(newList);
   };
   return (
     <div>
