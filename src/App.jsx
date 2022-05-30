@@ -13,15 +13,12 @@ export default function App() {
   const [searchValue, setSearchValue] = useState("");
   const [url, setUrl] = useState(api);
 
-  const getData = () => {
+  const getData = (url) => {
     axios.get(url).then((data) => setNews(data.data.hits));
   };
+
   useEffect(() => {
-    getData();
-    console.log("useEfect");
-  }, []);
-  useEffect(() => {
-    getData();
+    getData(url);
     console.log("useEfect2");
   }, [url]);
 
